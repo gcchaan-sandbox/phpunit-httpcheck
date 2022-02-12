@@ -1,0 +1,26 @@
+{
+    "name": "lvn/lvnmatch_jp",
+    "type": "project",
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "http:prod": [
+            "TEST_ENV=production phpunit"
+        ],
+        "http:stg": [
+            "TEST_ENV=staging paratest -p 4 -f"
+        ],
+        "http:dev": [
+            "TEST_ENV=local paratest -p 4 -f"
+        ]
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.4",
+        "phpunit/phpunit": "^9.5",
+        "vlucas/phpdotenv": "^5.4",
+        "brianium/paratest": "^6.4"
+    }
+}
